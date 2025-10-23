@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Faris Syauqi — Fotografer & Programmer</title>
+
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    body { font-family: "Poppins", sans-serif; }
+    html { scroll-behavior: smooth; }
+
+    /* small custom for glow and scroll reveal */
+    .hero-glow {
+      box-shadow: 0 10px 40px rgba(30, 64, 175, 0.35), 0 2px 8px rgba(15, 23, 42, 0.6);
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(14px);
+      transition: opacity 600ms ease, transform 600ms ease;
+      will-change: transform, opacity;
+    }
+    .reveal.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* lightbox modal */
+    .lightbox-backdrop {
+      background: rgba(2,6,23,0.85);
+      backdrop-filter: blur(6px);
+    }
+  </style>
+</head>
+<body class="bg-[#05060a] text-white">
+
+  <!-- SAVE IMAGES AS:
+       /images/hero.jpg      <- foto kamu (selfie/portrait) for hero circle
+       /images/gallery1.jpg   <- foto karya 1 (river)
+       /images/gallery2.jpg   <- foto karya 2 (sunny mountain)
+       /images/gallery3.jpg   <- foto karya 3 (trees silhouettes)
+       /images/gallery4.jpg   <- foto karya 4 (blur silhouettes)
+       /images/gallery5.jpg   <- foto karya 5 (paskibra sunlight)
+       /images/gallery6.jpg   <- foto karya 6 (clouds blue)
+       /images/gallery7.jpg   <- foto karya 7 (trees sunrise)
+       /images/gallery8.jpg   <- foto karya 8 (night street)
+       /images/gallery9.jpg   <- foto karya 9 (mosque night)
+       (Tambah atau urutkan sendiri sesuai file yang kamu punya)
+  -->
+
+  <!-- NAVBAR -->
+  <nav class="fixed w-full z-50 bg-black/50 backdrop-blur border-b border-gray-900">
+    <div class="max-w-6xl mx-auto px-5 py-3 flex items-center justify-between">
+      <a href="#home" class="flex items-center gap-3">
+        <div class="w-9 h-9 rounded-full bg-gradient-to-br from-sky-500 to-indigo-600 flex items-center justify-center text-black font-bold">F</div>
+        <span class="text-lg font-semibold">Faris<span class="text-sky-400">.</span></span>
+      </a>
+
+      <div class="hidden md:flex items-center gap-6 text-gray-300">
+        <a href="#home" class="hover:text-sky-400">Home</a>
+        <a href="#about" class="hover:text-sky-400">Tentang</a>
+        <a href="#skills" class="hover:text-sky-400">Skill</a>
+        <a href="#gallery" class="hover:text-sky-400">Galeri</a>
+        <a href="#contact" class="hover:text-sky-400">Kontak</a>
+      </div>
+
+      <div class="md:hidden">
+        <!-- simple mobile menu: anchor links (keeps things lightweight) -->
+        <a href="#contact" class="px-3 py-2 bg-sky-600 rounded-full text-sm">Kontak</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <header id="home" class="min-h-screen flex items-center justify-center text-center px-6 pt-20">
+    <div class="max-w-4xl mx-auto">
+      <!-- portrait circle -->
+      <div class="flex justify-center mb-8 reveal" data-reveal>
+        <div class="relative">
+          <div class="w-40 h-40 md:w-52 md:h-52 rounded-full overflow-hidden border-2 border-white/10 hero-glow"
+               style="background: linear-gradient(180deg, rgba(10,20,60,0.12), rgba(5,6,10,0.6));">
+            <img src="foto/1.jpg" alt="Faris Syauqi" class="w-full h-full object-cover">
+          </div>
+          <!-- subtle blue radial behind portrait -->
+          <div class="absolute -inset-1 rounded-full blur-xl -z-10"
+               style="background: radial-gradient(ellipse at center, rgba(59,130,246,0.18), transparent 40%);"></div>
+        </div>
+      </div>
+
+      <h1 class="text-3xl md:text-5xl font-bold mb-4 reveal" data-reveal>Halo, Saya <span class="text-sky-400">Faris Syauqi</span></h1>
+      <p class="text-gray-300 text-base md:text-lg max-w-2xl mx-auto mb-6 reveal" data-reveal>
+        Fotografer & Programmer — saya menggabungkan estetika visual dengan logika teknis untuk
+        membuat karya fotografi yang bercerita dan project web yang rapi.
+      </p>
+
+      <div class="flex justify-center gap-4 reveal" data-reveal>
+        <a href="#gallery" class="px-6 py-3 rounded-full bg-sky-600 hover:bg-sky-500 transition">Lihat Karya Saya</a>
+        <a href="#contact" class="px-6 py-3 rounded-full border border-gray-700 hover:border-sky-400 transition">Hubungi</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ABOUT -->
+  <section id="about" class="py-16 px-6 bg-[#07070A]">
+    <div class="max-w-4xl mx-auto text-center">
+      <h2 class="text-2xl font-semibold mb-4 reveal" data-reveal>Tentang Saya</h2>
+      <p class="text-gray-400 leading-relaxed reveal" data-reveal>
+        Saya adalah fotografer yang suka menangkap suasana (landscape, human interest, dan night photography)
+        dan juga programmer yang membangun website dan aplikasi. Saya percaya kombinasi seni & teknologi
+        membuat karya lebih bermakna.
+      </p>
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section id="skills" class="py-16 px-6">
+    <div class="max-w-5xl mx-auto">
+      <h2 class="text-2xl font-semibold text-center mb-8 reveal" data-reveal>Keahlian</h2>
+      <div class="grid md:grid-cols-2 gap-6">
+        <div class="p-6 bg-[#0b0b0d] rounded-2xl shadow-lg reveal" data-reveal>
+          <h3 class="text-xl font-semibold mb-2">Fotografi</h3>
+          <ul class="text-gray-300 space-y-1">
+            <li>• Landscape & Nature</li>
+            <li>• Night / Low-light Photography</li>
+            <li>• Human Interest & Event</li>
+            <li>• Editing: Lightroom & Photoshop</li>
+          </ul>
+        </div>
+
+        <div class="p-6 bg-[#0b0b0d] rounded-2xl shadow-lg reveal" data-reveal>
+          <h3 class="text-xl font-semibold mb-2">Programming</h3>
+          <ul class="text-gray-300 space-y-1">
+            <li>• HTML, CSS, JavaScript</li>
+            <li>• React & Tailwind CSS</li>
+            <li>• Backend dasar (Node/Express)</li>
+            <li>• Version control (Git) & deployment</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALLERY -->
+  <section id="gallery" class="py-16 px-4 bg-[#07070A]">
+    <div class="max-w-6xl mx-auto">
+      <h2 class="text-2xl font-semibold text-center mb-8 reveal" data-reveal>Galeri Fotografi</h2>
+
+      <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+        <!-- each figure clickable to open lightbox -->
+        <figure class="overflow-hidden rounded-xl bg-black/30 reveal cursor-pointer" data-reveal data-src="images/gallery1.jpg">
+          <img src="foto/2.jpg" alt="River" class="w-full h-48 object-cover transform hover:scale-105 transition" />
+        </figure>
+
+        <figure class="overflow-hidden rounded-xl bg-black/30 reveal cursor-pointer" data-reveal data-src="images/gallery2.jpg">
+          <img src="foto/3.jpg" alt="Mountain Sun" class="w-full h-48 object-cover transform hover:scale-105 transition" />
+        </figure>
+
+        <figure class="overflow-hidden rounded-xl bg-black/30 reveal cursor-pointer" data-reveal data-src="images/gallery3.jpg">
+          <img src="foto/4.jpg" alt="Trees Silhouette" class="w-full h-48 object-cover transform hover:scale-105 transition" />
+        </figure>
+
+        <figure class="overflow-hidden rounded-xl bg-black/30 reveal cursor-pointer" data-reveal data-src="images/gallery4.jpg">
+          <img src="foto/5.jpg" alt="Blur Silhouette" class="w-full h-48 object-cover transform hover:scale-105 transition" />
+        </figure>
+
+        <figure class="overflow-hidden rounded-xl bg-black/30 reveal cursor-pointer" data-reveal data-src="images/gallery5.jpg">
+          <img src="foto/6.jpg" alt="Paskibra" class="w-full h-48 object-cover transform hover:scale-105 transition" />
+        </figure>
+
+        <figure class="overflow-hidden rounded-xl bg-black/30 reveal cursor-pointer" data-reveal data-src="images/gallery6.jpg">
+          <img src="foto/7.jpg" alt="Clouds" class="w-full h-48 object-cover transform hover:scale-105 transition" />
+        </figure>
+
+        <figure class="overflow-hidden rounded-xl bg-black/30 reveal cursor-pointer" data-reveal data-src="images/gallery7.jpg">
+          <img src="foto/8.jpg" alt="Trees Sunrise" class="w-full h-48 object-cover transform hover:scale-105 transition" />
+        </figure>
+
+        <figure class="overflow-hidden rounded-xl bg-black/30 reveal cursor-pointer" data-reveal data-src="images/gallery8.jpg">
+          <img src="foto/9.jpg" alt="Night Street" class="w-full h-48 object-cover transform hover:scale-105 transition" />
+        </figure>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="py-16 px-6">
+    <div class="max-w-4xl mx-auto text-center">
+      <h2 class="text-2xl font-semibold mb-4 reveal" data-reveal>Kontak Saya</h2>
+      <p class="text-gray-300 mb-6 reveal" data-reveal>
+        Ingin kerja sama atau memesan sesi foto? Hubungi saya via Instagram atau WhatsApp.
+      </p>
+
+      <div class="flex flex-col sm:flex-row justify-center gap-4">
+        <a href="https://wa.me/62895329192408" target="_blank" rel="noopener"
+           class="px-6 py-3 rounded-full bg-green-600 hover:bg-green-500 transition reveal" data-reveal>
+          WhatsApp: 0895-3291-92408
+        </a>
+
+        <a href="https://instagram.com/faris_fasyafi12_31" target="_blank" rel="noopener"
+           class="px-6 py-3 rounded-full bg-pink-600 hover:bg-pink-500 transition reveal" data-reveal>
+          Instagram: @faris_fasyafi12_31
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="py-8 text-center text-gray-400 border-t border-gray-900">
+    © <span id="year"></span> Faris Syauqi — Fotografer & Programmer
+  </footer>
+
+  <!-- LIGHTBOX (hidden by default) -->
+  <div id="lightbox" class="fixed inset-0 hidden items-center justify-center z-50">
+    <div class="absolute inset-0 lightbox-backdrop" id="lightbox-backdrop"></div>
+    <div class="relative z-60 max-w-4xl w-full px-4">
+      <button id="lb-close" class="absolute top-6 right-6 z-70 text-white/90 bg-black/30 rounded-full p-2 hover:bg-black/50">✕</button>
+      <img id="lb-img" src="" alt="preview" class="mx-auto rounded-xl max-h-[85vh] object-contain">
+    </div>
+  </div>
+
+  <script>
+    // fill current year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // reveal on scroll
+    const reveals = document.querySelectorAll('[data-reveal]');
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add('show');
+          if (e.target.classList.contains('reveal')) {
+            e.target.classList.add('show');
+          }
+        }
+      });
+    }, { threshold: 0.12 });
+
+    reveals.forEach(r => {
+      r.classList.add('reveal');
+      io.observe(r);
+    });
+
+    // lightbox: click on gallery images to open
+    document.querySelectorAll('figure[data-src]').forEach(fig => {
+      fig.addEventListener('click', () => {
+        const src = fig.getAttribute('data-src');
+        const lb = document.getElementById('lightbox');
+        const lbImg = document.getElementById('lb-img');
+        lbImg.src = src;
+        lb.classList.remove('hidden');
+        lb.classList.add('flex');
+        document.body.style.overflow = 'hidden';
+      });
+    });
+
+    // close lightbox
+    function closeLightbox() {
+      const lb = document.getElementById('lightbox');
+      lb.classList.add('hidden');
+      lb.classList.remove('flex');
+      document.getElementById('lb-img').src = '';
+      document.body.style.overflow = '';
+    }
+
+    document.getElementById('lb-close').addEventListener('click', closeLightbox);
+    document.getElementById('lightbox-backdrop').addEventListener('click', closeLightbox);
+    document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeLightbox(); });
+
+  </script>
+</body>
+</html>
